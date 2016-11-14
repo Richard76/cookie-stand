@@ -22,13 +22,21 @@ var salmonStore1 = {
       //this.push(cookiesNeededPerHour());
     }
     return this.cookiesNeeded;
-// End of Object
+  },
+  totalCookiesNeededForStore: 0,
+  totalCookiesNeeded: function() {
+    console.log(this.cookiesNeeded);
+    for (var j = 0; j < this.hoursOpen.length; j++) {
+      this.totalCookiesNeededForStore = this.totalCookiesNeededForStore + this.cookiesNeeded[j];
+    }
+    return this.totalCookiesNeededForStore;
   }
+// End of Object
 };
-
 console.log('salmon store 1 - cust per hour: ' + salmonStore1.randCustPerHour());
 console.log('salmon store 1 - cooked needed per hour: ' + salmonStore1.cookiesNeededPerHour());
 console.log('salmon store 1 - cooked needed every hour: ' + salmonStore1.cookiesNeededEveryHour());
+console.log('salmon store 1 - total cookies needed for the day: ' + salmonStore1.totalCookiesNeeded());
 
 /*
 ===> SAMPLE Code Below
