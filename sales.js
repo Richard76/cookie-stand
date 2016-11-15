@@ -25,18 +25,40 @@ var salmonStore1 = {
   },
   totalCookiesNeededForStore: 0,
   totalCookiesNeeded: function() {
-    console.log(this.cookiesNeeded);
+    //console.log(this.cookiesNeeded);
     for (var j = 0; j < this.hoursOpen.length; j++) {
       this.totalCookiesNeededForStore = this.totalCookiesNeededForStore + this.cookiesNeeded[j];
     }
     return this.totalCookiesNeededForStore;
+  },
+  storeCookieProjections: function() {
+    var contentArea = document.getElementById('content_area');
+    var ul = document.createElement('ul');
+    var li;
+    this.cookiesNeededEveryHour(); /// should I remove this?
+    for (var i = 0; i < this.hoursOpen.length; i++) {
+      li = document.createElement('li');
+      li.textContent = this.hoursOpen[i] + ': ' + Math.round(this.cookiesNeeded[i]) + ' cookies';
+      ul.appendChild(li);
+    }
+    //contentArea.appendChild();
+    contentArea.appendChild(ul);
+
   }
 // End of Object
 };
-console.log('salmon store 1 - cust per hour: ' + salmonStore1.randCustPerHour());
-console.log('salmon store 1 - cooked needed per hour: ' + salmonStore1.cookiesNeededPerHour());
+
+salmonStore1.storeCookieProjections();
+//salmonStore1.cookiesNeeded();
+
+
+
+//console.log('salmon store 1 - cust per hour: ' + salmonStore1.randCustPerHour());
+//console.log('salmon store 1 - cooked needed per hour: ' + salmonStore1.cookiesNeededPerHour());
 console.log('salmon store 1 - cooked needed every hour: ' + salmonStore1.cookiesNeededEveryHour());
-console.log('salmon store 1 - total cookies needed for the day: ' + salmonStore1.totalCookiesNeeded());
+console.log('salmon store 1 - total cookies needed for the day: ' + Math.round(salmonStore1.totalCookiesNeeded()));
+
+
 
 /*
 ===> SAMPLE Code Below
