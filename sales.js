@@ -41,7 +41,8 @@ var salmonStore1 = {
       li.textContent = this.hoursOpen[i] + ': ' + Math.round(this.cookiesNeeded[i]) + ' cookies';
       ul.appendChild(li);
     }
-    //contentArea.appendChild();
+    li.textContent = 'Total: ' + Math.round(salmonStore1.totalCookiesNeeded()) + ' cookies';
+    ul.appendChild(li);
     contentArea.appendChild(ul);
 
   }
@@ -53,8 +54,8 @@ salmonStore1.storeCookieProjections();
 
 
 
-//console.log('salmon store 1 - cust per hour: ' + salmonStore1.randCustPerHour());
-//console.log('salmon store 1 - cooked needed per hour: ' + salmonStore1.cookiesNeededPerHour());
+console.log('salmon store 1 - cust per hour: ' + salmonStore1.randCustPerHour());
+console.log('salmon store 1 - cooked needed per hour: ' + salmonStore1.cookiesNeededPerHour());
 console.log('salmon store 1 - cooked needed every hour: ' + salmonStore1.cookiesNeededEveryHour());
 console.log('salmon store 1 - total cookies needed for the day: ' + Math.round(salmonStore1.totalCookiesNeeded()));
 
