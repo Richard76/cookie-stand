@@ -1,5 +1,70 @@
 'use strict';
 
+var store1 = new SalmonStore('1st and Pike', 23, 65, 6.3);
+var store2 = new SalmonStore('SeaTac Airport', 3, 24, 1.2);
+var store3 = new SalmonStore('Seattle Center', 11, 38, 3.7);
+var store4 = new SalmonStore('Capitol Hill', 20, 38, 2.3);
+var store5 = new SalmonStore('Alki', 2, 16, 4.6);
+
+function SalmonStore(storeName, minCust, maxCust, avgCookies) {
+  //var this = {};
+  this.name = storeName;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  this.hours = ['6am', '7am', '8am', '9am', '10am', '11am','12pm', '1pm', '2pm','3pm', '4pm', '5pm', '6pm', '7pm', '8pm' ];
+  //return this;
+}
+
+
+
+
+/*
+//--------Beginning of Sample Code
+function CookieStore(storeName, minCust, maxCust, avgCookies) {
+  //var this = {};
+  this.name = storeName;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  this.hours = ['9am', '10am', '11am'];
+
+  //return this;
+}
+
+CookieStore.prototype.logStoreName = function() {
+  console.log(this.name);
+}
+
+CookieStore.prototype.toHtml = function() {
+  var storeTable = document.getElementById('store_table');
+  var tableRow = document.createElement('tr');
+  var nameTableHeader = document.createElement('th');
+  var totalTableData = document.createElement('td');
+  var hourlyTableData;
+
+  nameTableHeader.textContent = this.name;
+  tableRow.appendChild(nameTableHeader);
+
+  for (var i = 0; i < this.hours.length; i++) {
+    hourlyTableData = document.createElement('td');
+    hourlyTableData.textContent = 5;
+    tableRow.appendChild(hourlyTableData);
+  }
+
+  totalTableData.textContent = 15;
+  tableRow.appendChild(totalTableData);
+
+  console.log(tableRow, storeTable)
+
+  storeTable.appendChild(tableRow);
+}
+/// -- End of Sample Code
+*/
+
+
+
+
 var salmonStore1 = {
   name: '1st and Pike',
   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
