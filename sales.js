@@ -140,7 +140,7 @@ function renderFooterRow() {
     tableRow.appendChild(hourlyTableHeader);
   }
   blankTableHeader.textContent = 'Total';
-  totalTableHeader.textContent = 'Big Total Here';
+  totalTableHeader.textContent = 'Grand Total Here';
   tableRow.appendChild(totalTableHeader);
 
   storeTable.appendChild(tableRow);
