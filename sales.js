@@ -136,10 +136,10 @@ function renderFooterRow() {
 
   for (var i = 0; i < store1.hoursOpen.length; i++) {
     hourlyTableHeader = document.createElement('th');
-    hourlyTableHeader.textContent = 'subtotal here';
+    hourlyTableHeader.textContent = Math.round(store1.cookiesNeeded[0]);
     tableRow.appendChild(hourlyTableHeader);
   }
-  blankTableHeader.textContent = 'Totals';
+  blankTableHeader.textContent = 'Total';
   totalTableHeader.textContent = 'Big Total Here';
   tableRow.appendChild(totalTableHeader);
 
