@@ -2,13 +2,19 @@
 
 
 
-var store1 = new SalmonStore('1st and Pike', 23, 65, 6.3);
-var store2 = new SalmonStore('SeaTac Airport', 3, 24, 1.2);
-var store3 = new SalmonStore('Seattle Center', 11, 38, 3.7);
-var store4 = new SalmonStore('Capitol Hill', 20, 38, 2.3);
-var store5 = new SalmonStore('Alki', 2, 16, 4.6);
+//var store1 = new SalmonStore('1st and Pike', 23, 65, 6.3);
+//var store2 = new SalmonStore('SeaTac Airport', 3, 24, 1.2);
+//var store3 = new SalmonStore('Seattle Center', 11, 38, 3.7);
+//var store4 = new SalmonStore('Capitol Hill', 20, 38, 2.3);
+//var store5 = new SalmonStore('Alki', 2, 16, 4.6);
 
-var storeList = [store1, store2, store3, store4, store5];
+var storeList = [
+  new SalmonStore('1st and Pike', 23, 65, 6.3),
+  new SalmonStore('SeaTac Airport', 3, 24, 1.2),
+  new SalmonStore('Seattle Center', 11, 38, 3.7),
+  new SalmonStore('Capitol Hill', 20, 38, 2.3),
+  new SalmonStore('Alki', 2, 16, 4.6)
+];
 console.log('there are ' + storeList.length + ' stores');
 
 function SalmonStore(storeName, minCust, maxCust, custAv) {
@@ -34,14 +40,14 @@ SalmonStore.prototype.randCustPerHour = function() {
   var max = Math.floor(this.maxCust);
   return Math.floor(Math.random() * (max - min)) + min;
 };
-console.log(store1.randCustPerHour());
+//console.log(storeList[0].randCustPerHour());
 
 //constructor 2
 SalmonStore.prototype.cookiesNeededPerHour = function() {
   var needed = this.randCustPerHour() * this.custAv;
   return needed;
 };
-console.log(store1.cookiesNeededPerHour());
+//console.log(storeList[0].cookiesNeededPerHour());
 
 //constructor 3
 SalmonStore.prototype.cookiesNeededEveryHour = function() {
@@ -51,7 +57,7 @@ SalmonStore.prototype.cookiesNeededEveryHour = function() {
   }
   return this.cookiesNeeded;
 };
-console.log(store1.cookiesNeededEveryHour());
+//console.log(storeList[0].cookiesNeededEveryHour());
 
 //constructor 4
 SalmonStore.prototype.totalCookiesNeeded = function() {
@@ -61,7 +67,7 @@ SalmonStore.prototype.totalCookiesNeeded = function() {
   }
   return this.totalCookiesNeededForStore;
 };
-//console.log(store1.totalCookiesNeeded());
+//console.log(storeList[0].totalCookiesNeeded());
 
 //constructor 5 --- Do Not reference this one
 SalmonStore.prototype.storeCookieProjections = function() {
@@ -89,7 +95,7 @@ SalmonStore.prototype.tableRowData = function() {
 
   tableRow.appendChild(blankTableHeader);
 
-  for (var i = 0; i < store1.hoursOpen.length; i++) {
+  for (var i = 0; i < storeList[0].hoursOpen.length; i++) {
     this.randCustPerHour();
     this.cookiesNeededPerHour();
     this.cookiesNeededEveryHour();
@@ -118,9 +124,9 @@ function renderHeaderRow() {
 
   tableRow.appendChild(blankTableHeader);
 
-  for (var i = 0; i < store1.hoursOpen.length; i++) {
+  for (var i = 0; i < storeList[0].hoursOpen.length; i++) {
     hourlyTableHeader = document.createElement('th');
-    hourlyTableHeader.textContent = store1.hoursOpen[i];
+    hourlyTableHeader.textContent = storeList[0].hoursOpen[i];
     tableRow.appendChild(hourlyTableHeader);
   }
 
@@ -139,9 +145,9 @@ function renderFooterRow() {
 
   tableRow.appendChild(blankTableHeader);
 
-  for (var i = 0; i < store1.hoursOpen.length; i++) {
+  for (var i = 0; i < storeList[0].hoursOpen.length; i++) {
     hourlyTableHeader = document.createElement('th');
-    hourlyTableHeader.textContent = Math.round(store1.cookiesNeeded[0]);
+    hourlyTableHeader.textContent = Math.round(storeList[0].cookiesNeeded[0]);
     tableRow.appendChild(hourlyTableHeader);
   }
   blankTableHeader.textContent = 'Total';
@@ -155,8 +161,9 @@ function renderFooterRow() {
 
 renderHeaderRow();
 for (var i = 0; i < storeList.length; i++) {
-  var storeNum = storeList[i];
-  storeNum.tableRowData();
+  //var storeNum = storeList[i];
+  //storeNum.tableRowData();
+  storeList[i].tableRowData();
 }
 
 //store1.tableRowData();
