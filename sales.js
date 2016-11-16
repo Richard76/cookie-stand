@@ -1,10 +1,15 @@
 'use strict';
 
+
+
 var store1 = new SalmonStore('1st and Pike', 23, 65, 6.3);
 var store2 = new SalmonStore('SeaTac Airport', 3, 24, 1.2);
 var store3 = new SalmonStore('Seattle Center', 11, 38, 3.7);
 var store4 = new SalmonStore('Capitol Hill', 20, 38, 2.3);
 var store5 = new SalmonStore('Alki', 2, 16, 4.6);
+
+var storeList = [store1, store2, store3, store4, store5];
+console.log('there are ' + storeList.length + ' stores');
 
 function SalmonStore(storeName, minCust, maxCust, custAv) {
   //var this = {};
@@ -149,11 +154,16 @@ function renderFooterRow() {
 //store1.totalCookiesNeeded();
 
 renderHeaderRow();
-store1.tableRowData();
-store2.tableRowData();
-store3.tableRowData();
-store4.tableRowData();
-store5.tableRowData();
+for (var i = 0; i < storeList.length; i++) {
+  var storeNum = storeList[i];
+  storeNum.tableRowData();
+}
+
+//store1.tableRowData();
+//store2.tableRowData();
+//store3.tableRowData();
+//store4.tableRowData();
+//store5.tableRowData();
 renderFooterRow();
 
 
