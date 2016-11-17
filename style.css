@@ -83,7 +83,11 @@ input[type="text"]
       nav ul li {
         display: inline-block;
         width: 100px;
+        text-align: center;
+      }
 
+      nav ul li:hover {
+        background-color: pink;
       }
 
       button {
@@ -92,12 +96,4 @@ input[type="text"]
         background-color: yellow;
         padding: 0 auto;
 
-      }
-
-      nav ul li {
-        text-align: center;
-      }
-
-      nav ul li:hover {
-        background-color: pink;
       }
