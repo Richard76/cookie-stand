@@ -1,12 +1,42 @@
 'use strict';
 
+var nameForm = document.getElementById('name_form');
+
+nameForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  //var textBox = document.getElementById('form_text');
+  var storeName = event.target.store_name.value;
+  var minCust = event.target.min_cust.value;
+  var maxCust = event.target.max_cust.value;
+  var estCookPerCust = event.target.cookies_per_cust.value;
+
+  console.log('Store Name: ' + storeName);
+  console.log('Min Cust: ' + minCust);
+  console.log('Max Cust: ' + maxCust);
+  console.log('Estimated Cust Per Hour: ' + estCookPerCust);
+
+  event.target.store_name.value = '';
+  event.target.min_cust.value = '';
+  event.target.max_cust.value = '';
+  event.target.cookies_per_cust.value = '';
 
 
-//var store1 = new SalmonStore('1st and Pike', 23, 65, 6.3);
-//var store2 = new SalmonStore('SeaTac Airport', 3, 24, 1.2);
-//var store3 = new SalmonStore('Seattle Center', 11, 38, 3.7);
-//var store4 = new SalmonStore('Capitol Hill', 20, 38, 2.3);
-//var store5 = new SalmonStore('Alki', 2, 16, 4.6);
+  //take the input data and create a new store_name & add to store list array
+  storeList.push(new SalmonStore(storeName, minCust, maxCust, estCookPerCust));
+
+  //clear the contents of the tableRow
+  var tableSection = document.getElementById('store_table');
+  tableSection.textContent = '';
+
+  //refresh the page
+  renderPage();
+
+}
+
+
 
 var storeList = [
   new SalmonStore('1st and Pike', 23, 65, 6.3),
@@ -157,22 +187,15 @@ function renderFooterRow() {
   storeTable.appendChild(tableRow);
 }
 
-//store1.totalCookiesNeeded();
+function renderPage() {
+  renderHeaderRow();
+  for (var i = 0; i < storeList.length; i++) {
+    storeList[i].tableRowData();
+  }
+  renderFooterRow();
+};
 
-renderHeaderRow();
-for (var i = 0; i < storeList.length; i++) {
-  //var storeNum = storeList[i];
-  //storeNum.tableRowData();
-  storeList[i].tableRowData();
-}
-
-//store1.tableRowData();
-//store2.tableRowData();
-//store3.tableRowData();
-//store4.tableRowData();
-//store5.tableRowData();
-renderFooterRow();
-
+renderPage();
 
 
 
