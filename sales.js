@@ -177,7 +177,7 @@ function renderFooterRow() {
 
   for (var i = 0; i < storeList[0].hoursOpen.length; i++) {
     hourlyTableHeader = document.createElement('th');
-    hourlyTableHeader.textContent = Math.round(storeList[0].cookiesNeeded[0]);
+    hourlyTableHeader.textContent = Math.round(storeList[0].cookiesNeeded[i]);
     tableRow.appendChild(hourlyTableHeader);
   }
   blankTableHeader.textContent = 'Total';
@@ -187,6 +187,19 @@ function renderFooterRow() {
   storeTable.appendChild(tableRow);
 }
 
+// need to wrap this function up by adding another loop and returning an array
+function subTotalByHour () {
+  var subtotal = 0;
+  for (var i = 0; i < storeList.length; i++) {
+    subtotal = subtotal + storeList[i].cookiesNeeded[0];
+  }
+  return subtotal;
+};
+
+
+
+
+
 function renderPage() {
   renderHeaderRow();
   for (var i = 0; i < storeList.length; i++) {
@@ -195,49 +208,10 @@ function renderPage() {
   renderFooterRow();
 };
 
+
+
+
 renderPage();
 
-
-
-/*
-//--------Beginning of Sample Code from Erin on Tuesday
-function CookieStore(storeName, minCust, maxCust, avgCookies) {
-  //var this = {};
-  this.name = storeName;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookies = avgCookies;
-  this.hours = ['9am', '10am', '11am'];
-
-  //return this;
-}
-
-CookieStore.prototype.logStoreName = function() {
-  console.log(this.name);
-}
-
-CookieStore.prototype.toHtml = function() {
-  var storeTable = document.getElementById('store_table');
-  var tableRow = document.createElement('tr');
-  var nameTableHeader = document.createElement('th');
-  var totalTableData = document.createElement('td');
-  var hourlyTableData;
-
-  nameTableHeader.textContent = this.name;
-  tableRow.appendChild(nameTableHeader);
-
-  for (var i = 0; i < this.hours.length; i++) {
-    hourlyTableData = document.createElement('td');
-    hourlyTableData.textContent = 5;
-    tableRow.appendChild(hourlyTableData);
-  }
-
-  totalTableData.textContent = 15;
-  tableRow.appendChild(totalTableData);
-
-  console.log(tableRow, storeTable)
-
-  storeTable.appendChild(tableRow);
-}
-/// -- End of Sample Code
-*/
+console.log(subTotalByHour());
+//console.log(storeList[0].cookiesNeeded[0]);
