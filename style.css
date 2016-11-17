@@ -9,3 +9,11 @@ table {
 th, td {
   border: 1px solid blue;
 }
+
+
+
+input[type="text"]
+      {
+         width: 200px;
+         border: 1px solid #CCC;
+      }
