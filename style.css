@@ -21,11 +21,11 @@ input[type="text"]
 
 
       header {
-        height: 80px;
+        height: 70px;
       }
 
       nav {
-        height: 85px;
+        height: 80px;
         position: fixed;
         background-color: salmon;
         width: 100%;
