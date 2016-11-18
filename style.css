@@ -69,8 +69,10 @@ input[type="text"]
       .images3 {
         background-color: pink;
         display: inline;
-        padding: 1px;
+        margin-left: 3px;
       }
+
+
 
 
 
