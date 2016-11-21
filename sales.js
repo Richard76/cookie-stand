@@ -189,9 +189,11 @@ function renderFooterRow() {
 
 // need to wrap this function up by adding another loop and returning an array
 function subTotalByHour () {
-  var subtotal = 0;
-  for (var i = 0; i < storeList.length; i++) {
-    subtotal = subtotal + storeList[i].cookiesNeeded[0];
+  var subtotal = [];
+  for (var i = 0; i < 15; i++) {
+    for (var j = 0; j < storeList.length; j++) {
+      subtotal[i] = subtotal[i] + storeList[j].cookiesNeeded[i];
+    }
   }
   return subtotal;
 };
