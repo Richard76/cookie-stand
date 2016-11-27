@@ -33,6 +33,9 @@ var salmonStore1 = {
   },
   storeCookieProjections: function() {
     var contentArea = document.getElementById('content_area');
+    var h2 = document.createElement('h2');
+    h2.textContent = this.name + ' Store';
+    contentArea.appendChild(h2);
     var ul = document.createElement('ul');
     var li;
     this.cookiesNeededEveryHour(); /// should I remove this?
@@ -41,7 +44,7 @@ var salmonStore1 = {
       li.textContent = this.hoursOpen[i] + ': ' + Math.round(this.cookiesNeeded[i]) + ' cookies';
       ul.appendChild(li);
     }
-    li.textContent = 'Total: ' + Math.round(salmonStore1.totalCookiesNeeded()) + ' cookies';
+    li.textContent = 'Total: ' + Math.round(this.totalCookiesNeeded()) + ' cookies';
     ul.appendChild(li);
     contentArea.appendChild(ul);
 
@@ -82,6 +85,9 @@ var salmonStore2 = {
   },
   storeCookieProjections: function() {
     var contentArea = document.getElementById('content_area');
+    var h2 = document.createElement('h2');
+    h2.textContent = this.name + ' Store';
+    contentArea.appendChild(h2);
     var ul = document.createElement('ul');
     var li;
     this.cookiesNeededEveryHour(); /// should I remove this?
@@ -90,7 +96,7 @@ var salmonStore2 = {
       li.textContent = this.hoursOpen[i] + ': ' + Math.round(this.cookiesNeeded[i]) + ' cookies';
       ul.appendChild(li);
     }
-    li.textContent = 'Total: ' + Math.round(salmonStore1.totalCookiesNeeded()) + ' cookies';
+    li.textContent = 'Total: ' + Math.round(this.totalCookiesNeeded()) + ' cookies';
     ul.appendChild(li);
     contentArea.appendChild(ul);
 
@@ -131,6 +137,9 @@ var salmonStore3 = {
   },
   storeCookieProjections: function() {
     var contentArea = document.getElementById('content_area');
+    var h2 = document.createElement('h2');
+    h2.textContent = this.name + ' Store';
+    contentArea.appendChild(h2);
     var ul = document.createElement('ul');
     var li;
     this.cookiesNeededEveryHour(); /// should I remove this?
@@ -139,7 +148,7 @@ var salmonStore3 = {
       li.textContent = this.hoursOpen[i] + ': ' + Math.round(this.cookiesNeeded[i]) + ' cookies';
       ul.appendChild(li);
     }
-    li.textContent = 'Total: ' + Math.round(salmonStore1.totalCookiesNeeded()) + ' cookies';
+    li.textContent = 'Total: ' + Math.round(this.totalCookiesNeeded()) + ' cookies';
     ul.appendChild(li);
     contentArea.appendChild(ul);
 
@@ -180,6 +189,9 @@ var salmonStore4 = {
   },
   storeCookieProjections: function() {
     var contentArea = document.getElementById('content_area');
+    var h2 = document.createElement('h2');
+    h2.textContent = this.name + ' Store';
+    contentArea.appendChild(h2);
     var ul = document.createElement('ul');
     var li;
     this.cookiesNeededEveryHour(); /// should I remove this?
@@ -188,7 +200,7 @@ var salmonStore4 = {
       li.textContent = this.hoursOpen[i] + ': ' + Math.round(this.cookiesNeeded[i]) + ' cookies';
       ul.appendChild(li);
     }
-    li.textContent = 'Total: ' + Math.round(salmonStore1.totalCookiesNeeded()) + ' cookies';
+    li.textContent = 'Total: ' + Math.round(this.totalCookiesNeeded()) + ' cookies';
     ul.appendChild(li);
     contentArea.appendChild(ul);
 
@@ -229,6 +241,10 @@ var salmonStore5 = {
   },
   storeCookieProjections: function() {
     var contentArea = document.getElementById('content_area');
+    var h2 = document.createElement('h2');
+    h2.textContent = this.name + ' Store';
+    contentArea.appendChild(h2);
+
     var ul = document.createElement('ul');
     var li;
     this.cookiesNeededEveryHour(); /// should I remove this?
@@ -237,7 +253,7 @@ var salmonStore5 = {
       li.textContent = this.hoursOpen[i] + ': ' + Math.round(this.cookiesNeeded[i]) + ' cookies';
       ul.appendChild(li);
     }
-    li.textContent = 'Total: ' + Math.round(salmonStore1.totalCookiesNeeded()) + ' cookies';
+    li.textContent = 'Total: ' + Math.round(this.totalCookiesNeeded()) + ' cookies';
     ul.appendChild(li);
     contentArea.appendChild(ul);
 
